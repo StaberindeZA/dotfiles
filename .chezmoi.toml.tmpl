@@ -1,0 +1,12 @@
+{{- $work := promptBoolOnce . "work" "Is this a Mozilla work machine" -}}
+  {{- $email := promptStringOnce . "email" "Git email" -}}
+
+  [data]
+      work = {{ $work }}
+      email = {{ $email | quote }}
+      name = "Reino Muhl"
+      signingkey = "key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP3Qd+yE+WulBqcSYadpjvuYP64vsWU+PiGpbYOpkvX1"
+
+  [diff]
+      command = "nvim"
+      args = ["-d", "{{ "{{ .Destination }}" }}", "{{ "{{ .Target }}" }}"]

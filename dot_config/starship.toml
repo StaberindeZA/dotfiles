@@ -1,0 +1,52 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$terraform\
+$kubernetes\
+$aws\
+$cmd_duration\
+$line_break\
+$character"""
+
+add_newline = false
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = 'bold cyan'
+
+[git_branch]
+style = 'bold purple'
+
+[git_status]
+style = 'bold yellow'
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+
+[terraform]
+format = '[$symbol$workspace]($style) '
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style) '
+style = 'bold red'
+
+[aws]
+format = '[$symbol($profile )(\($region\) )]($style)'
+
+[gcloud]
+disabled = true
+
+[cmd_duration]
+min_time = 2000
+format = '[$duration]($style) '
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+vimcmd_symbol = '[❮](bold green)'

@@ -1,0 +1,8 @@
+.config/fish/fish_variables
+.config/fish/completions
+.config/fish/conf.d
+.config/fish/functions
+.config/fish/themes
+
+!.config/fish/conf.d/zz_local.fish
+Brewfile

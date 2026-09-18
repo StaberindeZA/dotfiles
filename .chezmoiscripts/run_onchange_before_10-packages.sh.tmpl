@@ -1,0 +1,12 @@
+#!/bin/bash
+set -eufo pipefail
+
+# Brewfile hash: {{ include "Brewfile" | sha256sum }}
+
+if ! command -v brew >/dev/null 2>&1; then
+    NONINTERACTIVE=1 /bin/bash -c \
+        "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+eval "$({{ if eq .chezmoi.arch "arm64" }}/opt/homebrew{{ else }}/usr/local{{ end }}/bin/brew shellenv)"
+brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"

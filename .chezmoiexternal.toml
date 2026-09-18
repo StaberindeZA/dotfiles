@@ -1,0 +1,13 @@
+[".config/nvim"]
+    type = "git-repo"
+    url = "https://github.com/StaberindeZA/kickstart.nvim.git"
+    refreshPeriod = "168h"
+    [".config/nvim".clone]
+        args = ["--branch", "master"]
+    [".config/nvim".pull]
+        args = ["--ff-only"]
+
+[".config/fish/functions/fisher.fish"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish"
+    refreshPeriod = "720h"
